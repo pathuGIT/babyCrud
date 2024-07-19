@@ -31,9 +31,9 @@ public class BabyService {
     public List<GetBabyDto> getAllBaby() {
         List<Baby> optionalBaby = babyRepository.findAll();
         List<GetBabyDto> babyList = new ArrayList<>();
-        GetBabyDto getBabyDto = new GetBabyDto();
         for(Baby baby : optionalBaby){
             //System.out.println("ll");
+            GetBabyDto getBabyDto = new GetBabyDto();
             getBabyDto.setId(baby.getId());
             getBabyDto.setName(baby.getName());
             getBabyDto.setAge(baby.getAge());
