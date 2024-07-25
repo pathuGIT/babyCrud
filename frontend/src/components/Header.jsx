@@ -2,10 +2,8 @@ import React from 'react'
 
 function Header() {
   return (
-    <div>
-        <nav class="navbar navbar-dark bg-primary">
-            <a href="#" class="navbar-brand">Baby Crud Simple Application</a>
-        </nav>
+    <div className='p-3 mb-2 bg-primary text-white'>
+        <h2 className='text-center'>Baby Crud Simple Application</h2>
     </div>
   )
 }

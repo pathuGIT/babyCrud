@@ -20,6 +20,8 @@ function App() {
           <Route path='/babies' element={<ListBabies/>}></Route>
           {/* http://localhost:5173/add-baby */}
           <Route path='/add-baby' element={<BabyComponent/>}></Route>
+          {/* http://localhost:5173/edit-baby/1 */}
+          <Route path='/edit-baby/:id' element={<BabyComponent/>}></Route>
         </Routes>
         
         <Footer/>

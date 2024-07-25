@@ -21,6 +21,10 @@ const ListBabies = () => {
         navigate('/add-baby');
     }
 
+    function updateBabe(id){
+        navigate(`/edit-baby/${id}`); 
+    }
+
     return (
         <div className='container'>
             <h2 className='text-center'>Baby List</h2>
@@ -31,6 +35,7 @@ const ListBabies = () => {
                         <th>ID</th>
                         <th>Name</th>
                         <th>Age</th>
+                        <th>Update</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +45,7 @@ const ListBabies = () => {
                                 <td>{baby.id}</td>
                                 <td>{baby.name}</td>
                                 <td>{baby.age}</td>
+                                <td><input type="button" value="Update"  className='bnt btn-info' onClick= {() => {updateBabe(baby.id)}}  /></td>
                             </tr>
                         )
                     }

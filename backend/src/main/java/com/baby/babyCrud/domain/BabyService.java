@@ -50,6 +50,7 @@ public class BabyService {
             getBabyDto.setId(optionalBaby.get().getId());
             getBabyDto.setName(optionalBaby.get().getName());
             getBabyDto.setAge(optionalBaby.get().getAge());
+            getBabyDto.setOwner(optionalBaby.get().getOwner());
             return ResponseEntity.ok(getBabyDto);
         }else {
             return ResponseEntity.notFound().build();
@@ -77,6 +78,23 @@ public class BabyService {
             return ResponseEntity.ok("Deleted");
         }else{
             return ResponseEntity.ok("No baby id found.");
+        }
+    }
+
+    public ResponseEntity<Baby> updateBabyById(Integer id, UpdateBabyDto updateBabyDto) {
+        Optional<Baby> optionalBaby = babyRepository.findById(id);
+        if(optionalBaby.isPresent()){
+            Baby baby = optionalBaby.get();
+
+            System.out.println(updateBabyDto.getName());
+
+            baby.setName(updateBabyDto.getName());
+            baby.setAge(updateBabyDto.getAge());
+            baby.setOwner(updateBabyDto.getOwner());
+            babyRepository.save(baby);
+            return ResponseEntity.ok(baby);
+        }else{
+            return ResponseEntity.notFound().build();
         }
     }
 }

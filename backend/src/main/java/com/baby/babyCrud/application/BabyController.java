@@ -38,6 +38,10 @@ public class BabyController {
     public ResponseEntity<Baby> updateBaby(@RequestBody UpdateBabyDto updateBabyDto){
         return babyService.updateBaby(updateBabyDto);
     }
+    @PutMapping("/updateBaby/{id}")
+    public ResponseEntity<Baby> updateBabyById(@PathVariable Integer id, @RequestBody UpdateBabyDto updateBabyDto){
+        return babyService.updateBabyById(id,updateBabyDto);
+    }
 
     @DeleteMapping("/deleteBaby/{id}")
     public ResponseEntity<String> deleteBaby(@PathVariable Integer id){
